@@ -6,8 +6,8 @@
     <title>Compte à Rebours</title>
     <style>
         body {
-            background-color: #430001;
-            color: #ff7979;
+            background-color: #933536;
+            color: #ff7878;
             font-family: 'Arial', sans-serif;
             text-align: center;
             display: flex;
@@ -15,24 +15,58 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            display: flex; 
+            flex-direction: column;
         }
         #countdown {
             font-size: 30px;
             font-weight: bold;
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            text-shadow: 0 0 10px #e36a6a, 0 0 20px #e36a6a, 0 0 30px #e36a6a;
         }
         .electric {
             display: inline-block;
             animation: flicker 1.5s infinite alternate;
         }
         @keyframes flicker {
-            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
-            50% { text-shadow: 0 0 5px #ff0000, 0 0 15px ff0000#ff0000, 0 0 25px #ff0000; }
-            100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
+            0% { text-shadow: 0 0 10px #933536, 0 0 20px #933536, 0 0 30px #933536; }
+            50% { text-shadow: 0 0 5px #933536, 0 0 15px #933536#933536, 0 0 25px #933536; }
+            100% { text-shadow: 0 0 10px #933536, 0 0 20px #933536, 0 0 30px #933536; }
+        }
+        #box{
+            background-color: #ff7878;
+            height:50px;
+            width: 50px;
+            transform: rotate(45deg);
+        }
+        #b1{
+            background-color: #ff7878;
+            height:50px;
+            width: 50px;
+            position: absolute;
+            border-radius: 100% 100% 0 0;
+            bottom: 25px
+        }
+        #b2{
+            background-color: #ff7878;
+            height:50px;
+            width: 50px;
+            position: absolute;
+            border-radius: 100% 0 0  100%;
+            right: 25px;
+            top: 0;
+        }
+        .space{
+            height:30px;
         }
     </style>
 </head>
 <body>
+    <div id="box">
+        <div id="b1"></div>
+        <div id="b2"></div>
+        
+    </div>
+    <div class="space"></div>
     <div id="countdown"></div>
     
     <script>
