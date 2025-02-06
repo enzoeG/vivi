@@ -21,21 +21,19 @@
         #countdown {
             font-size: 30px;
             font-weight: bold;
+            text-shadow: 3px 3px 10px #000000b3;
         }
         .electric {
             display: inline-block;
             animation: flicker 1.5s infinite alternate;
         }
-        @keyframes flicker {
-            0% { text-shadow: 0 0 10px #e36a6a, 0 0 20px #cb6161, 0 0 30px #a24c4c; }
-            50% { text-shadow: 0 0 5px #e36a6a, 0 0 15px #e36a6a#e36a6a, 0 0 25px #e36a6a; }
-            100% { text-shadow: 0 0 10px #e36a6a, 0 0 20px #e36a6a, 0 0 30px #e36a6a; }
-        }
+        
         #box{
             background-color: #ff7878;
             height:50px;
             width: 50px;
             transform: rotate(45deg);
+            
         }
         #b1{
             background-color: #ff7878;
@@ -44,6 +42,7 @@
             position: absolute;
             border-radius: 100% 100% 0 0;
             bottom: 25px
+            
         }
         #b2{
             background-color: #ff7878;
@@ -60,7 +59,7 @@
         #text{
             font-size: 20px;
             font-weight: bold;
-            text-shadow: 3px 3px 10px #000;
+            text-shadow: 3px 3px 10px #000000b3;
         }
     </style>
 </head>
@@ -76,7 +75,7 @@
     <div id="text"></div>
 
     <script>
-        const messages = ["Je t'aime", "Tu me manques", "Trop hâte de te voir"];
+        const messages = ["Je t'aime", "Tu me manques", "Trop hâte de te voir", "je vais te croquer","<3"];
         let messageIndex = 0;
         let charIndex = 0;
         const textElement = document.getElementById("text");
