@@ -28,7 +28,7 @@
             animation: flicker 1.5s infinite alternate;
         }
         @keyframes flicker {
-            0% { text-shadow: 0 0 10px #e36a6a, 0 0 20px #e36a6a, 0 0 30px #e36a6a; }
+            0% { text-shadow: 0 0 10px #e36a6a, 0 0 20px #cb6161, 0 0 30px #a24c4c; }
             50% { text-shadow: 0 0 5px #e36a6a, 0 0 15px #e36a6a#e36a6a, 0 0 25px #e36a6a; }
             100% { text-shadow: 0 0 10px #e36a6a, 0 0 20px #e36a6a, 0 0 30px #e36a6a; }
         }
@@ -58,6 +58,11 @@
         .space{
             height:30px;
         }
+        #text{
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px #000;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +73,38 @@
     </div>
     <div class="space"></div>
     <div id="countdown"></div>
+    <div class="space"></div>
+    <div id="text"></div>
+
+    <script>
+        const messages = ["Je t'aime", "Tu me manques", "Trop hâte de te voir"];
+        let messageIndex = 0;
+        let charIndex = 0;
+        const textElement = document.getElementById("text");
+
+        function typeMessage() {
+            if (charIndex < messages[messageIndex].length) {
+                textElement.textContent += messages[messageIndex][charIndex];
+                charIndex++;
+                setTimeout(typeMessage, 100);
+            } else {
+                setTimeout(eraseMessage, 1500);
+            }
+        }
+
+        function eraseMessage() {
+            if (charIndex > 0) {
+                textElement.textContent = messages[messageIndex].slice(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseMessage, 50);
+            } else {
+                messageIndex = (messageIndex + 1) % messages.length;
+                setTimeout(typeMessage, 500);
+            }
+        }
+
+        typeMessage();
+    </script>
     
     <script>
         function updateCountdown() {
